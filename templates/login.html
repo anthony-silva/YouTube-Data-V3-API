@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block login %}
+{% endblock login %}
+
+{% block body %}
+<h3>Login Form</h3>
+<br>
+<form method='POST'>
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="exampleInputEmail1">Username</label>
+      {{ form.username }}
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      {{ form.password }}
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    {{ form.errors }}
+</form>
+
+{% endblock %}
